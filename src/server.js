@@ -2,7 +2,6 @@ import express from 'express';
 import path from 'path';
 import socketIO from 'socket.io';
 import morgan from 'morgan';
-import { Socket } from 'dgram';
 
 const PORT = 4000;
 
