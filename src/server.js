@@ -3,6 +3,7 @@ import path from 'path';
 import socketIO from 'socket.io';
 import morgan from 'morgan';
 import socketContriller from './socket-controller';
+import events from './events';
 
 const PORT = 4000;
 
@@ -15,7 +16,7 @@ app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'static')));
 
 app.get('/', (req, res) => {
-  res.render('home');
+  res.render('home', { events: JSON.stringify(events) });
 });
 
 const handleListening = () => {

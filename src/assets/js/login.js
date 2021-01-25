@@ -4,10 +4,10 @@ const NICKNAME = 'nickname';
 const body = document.querySelector('body');
 const loginForm = document.querySelector('#jsLogin');
 const nickname = localStorage.getItem(NICKNAME);
-const socket = io('/');
 
 const logIn = nickname => {
-  socket.emit('setNickname', { nickname });
+  window.socket = io('/');
+  window.socket.emit(window.events.setNickname, { nickname });
 };
 
 if (nickname === null) {
